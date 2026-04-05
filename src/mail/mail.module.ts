@@ -7,7 +7,6 @@ import { ConfigModule } from '@nestjs/config';
 
 @Module({
   imports: [
-    ConfigModule.forFeature(mailerConfig),
     MailerModule.forRootAsync({
       inject: [mailerConfig.KEY],
       useFactory: (config: TMailerConfig) => ({
